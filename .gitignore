@@ -1,0 +1,30 @@
+# Archivos de configuración del entorno
+.env
+.env.local
+.env.*
+venv/
+
+# Archivos de compilación y dependencias
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+*.egg
+*.log
+
+# Archivos de configuración del editor
+.vscode/
+.idea/
+*/migrations/
+# Archivos de bases de datos locales
+
+db.sqlite3
+
+# Archivos de medios y estáticos generados
+root/
+
+# Archivos de configuración de Docker
+Dockerfile
+.dockerignore
