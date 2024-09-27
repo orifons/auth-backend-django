@@ -1,7 +1,9 @@
-from .configs import *
-from decouple import config
-from os.path import join
+from os import makedirs
 from pathlib import Path
+from os.path import join, exists
+
+from decouple import config
+from .configs import *
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -70,10 +72,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'server_config.wsgi.application'
 
+# Define the path to the database directory
+DATABASE_DIR = join(BASE_DIR, 'database')
+
+# Create the directory if it doesn't exist
+if not exists(DATABASE_DIR):
+    makedirs(DATABASE_DIR)
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': join(DATABASE_DIR, 'db.sqlite3'),
     }
 }
 
