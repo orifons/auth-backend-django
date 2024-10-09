@@ -17,9 +17,11 @@ __pycache__/
 # Archivos de configuración del editor
 .vscode/
 .idea/
-*/migrations/
-# Archivos de bases de datos locales
 
+# Carpetas no necesarias
+migrations/
+
+# Archivos de bases de datos locales
 db.sqlite3
 
 # Archivos de medios y estáticos generados
